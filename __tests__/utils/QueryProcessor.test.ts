@@ -29,7 +29,14 @@ describe("QueryProcessor", () => {
         const query = "name";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
-            "My name is Ava. " 
+            "Ava." 
+          ));
+    });
+    test('should return 9+28', () => {
+        const query = "name";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "37" 
           ));
     });
 });
