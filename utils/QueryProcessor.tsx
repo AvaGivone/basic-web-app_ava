@@ -24,6 +24,23 @@ export default function QueryProcessor(query: string): string {
       return (x+y).toString();
     }
   }
+  else if (query.toLowerCase().includes("multiplied by")) {
+    const addMatch = query.match(/What is (\d+) multiplied by (\d+)/);
+    if (addMatch) {
+      const x: number = parseInt(addMatch[1]);
+      const y: number = parseInt(addMatch[2]);
+      return (x*y).toString();
+    }
+  }
+  else if (query.toLowerCase().includes("largest")) {
+    const addMatch = query.match(/Which of the following numbers is the largest: (\d+), (\d+), (\d+)/);
+    if (addMatch) {
+      const x: number = parseInt(addMatch[1]);
+      const y: number = parseInt(addMatch[2]);
+      const z: number = parseInt(addMatch[3]);
+      return Math.max(x, y, z).toString();
+    }
+  }
 
   return "";
 }
