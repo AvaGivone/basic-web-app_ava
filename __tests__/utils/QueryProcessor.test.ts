@@ -25,4 +25,11 @@ describe("QueryProcessor", () => {
             "You andrew ID is agivone. " 
           ));
     });
+    test('should return name', () => {
+        const query = "name";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe((
+            "My name is Ava. " 
+          ));
+    });
 });
