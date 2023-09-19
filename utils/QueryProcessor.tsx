@@ -16,10 +16,13 @@ export default function QueryProcessor(query: string): string {
       "Ava." 
     );
   }
-  else if (query.toLowerCase().includes("9 plus 28")) {
-    return (
-      "37" 
-    );
+  else if (query.toLowerCase().includes("plus")) {
+    const addMatch = query.match(/What is (\d+) plus (\d+)/);
+    if (addMatch) {
+      const x: number = parseInt(addMatch[1]);
+      const y: number = parseInt(addMatch[2]);
+      return (x+y).toString();
+    }
   }
 
   return "";
